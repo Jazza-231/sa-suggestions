@@ -31,11 +31,10 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 	if (mode === 'top') {
 		ideas = ideas.sort((a, b) => b.upvotes.length - a.upvotes.length);
 	} else if (mode === 'new') {
-		ideas = ideas.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
+		ideas = ideas.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 	} else if (mode === 'reccomended') {
-		ideas = ideas.sort(() => 0.5 - Math.random());
-		ideas = ideas.sort(() => 0.5 - Math.random());
-		ideas = ideas.sort(() => 0.5 - Math.random());
+		ideas = ideas.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+		ideas = ideas.sort((a, b) => (Math.random() > 0.3 ? b.upvotes.length - a.upvotes.length : 0));
 	}
 
 	// TODO: Merge with GET `/idea/[id]`

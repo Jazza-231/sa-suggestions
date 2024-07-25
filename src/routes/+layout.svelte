@@ -18,8 +18,8 @@
 	</div>
 	{#if data.loggedIn}
 		<div class="navbar">
-			<a href="/idea/create">Create Idea</a>
 			<a href="/">Explore Ideas</a>
+			<a href="/idea/create">Create Idea</a>
 			<div class="dropdown-container">
 				<button on:click|preventDefault={toggleProfileDropdown}>
 					<img class="icon" src="/api/auth/user/{data.user.username}/avatar" alt="" />
@@ -137,13 +137,14 @@
 				button {
 					display: flex;
 					align-items: center;
-					gap: 6px;
+					gap: 12px;
 					height: 100%;
 					width: 100%;
 					justify-content: center;
 
 					.icon {
 						height: 36px;
+						border-radius: 0.4rem;
 					}
 				}
 

@@ -70,12 +70,17 @@
 				background: #222;
 				color: inherit;
 				font-family: inherit;
-				border: 2px solid #fff;
+				border: 1px solid #b1b1b1;
 				flex: 1;
 				max-width: 550px;
 				min-width: 0px;
 				border-radius: 6px;
 				padding: 4px 10px;
+				transition: border 200ms;
+
+				&:focus {
+					border: 1px solid #fff;
+				}
 			}
 
 			.sort {
@@ -87,11 +92,19 @@
 					background: #222;
 					font-family: inherit;
 					color: inherit;
-					border: 2px solid #fff;
 					border-radius: 6px;
+					border: 1px solid transparent;
+					transition:
+						background 200ms,
+						border 200ms;
+
+					&:hover {
+						background: #ff7b26;
+						color: #fff;
+					}
 
 					&.selected {
-						background: #ff7b26;
+						border: 1px solid #ff7b26;
 					}
 				}
 			}
@@ -108,7 +121,7 @@
 				display: flex;
 				background: #181818;
 				padding: 15px;
-				border: 2px solid #fff;
+				border: 1px solid #b1b1b1;
 				border-radius: 10px;
 				gap: 10px;
 				box-sizing: border-box;

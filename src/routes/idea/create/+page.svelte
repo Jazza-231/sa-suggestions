@@ -65,7 +65,7 @@
 
 				.title {
 					width: 100%;
-					border: #fff 3px solid;
+					border: #b1b1b1 1.5px solid;
 					background: #181818;
 					box-sizing: border-box;
 					font-size: 24px;
@@ -74,11 +74,16 @@
 					outline: none;
 					padding: 5px 10px;
 					border-radius: 6px;
+					transition: border 200ms;
+
+					&:focus {
+						border: #fff 1.5px solid;
+					}
 				}
 
 				.content-area {
 					box-sizing: border-box;
-					border: #fff 3px solid;
+					border: #b1b1b1 1px solid;
 					background: #181818;
 					border-radius: 6px;
 					resize: none;
@@ -89,6 +94,11 @@
 					font-size: 18px;
 					font-family: inherit;
 					color: inherit;
+					transition: border 200ms;
+
+					&:focus {
+						border: #fff 1px solid;
+					}
 				}
 			}
 
@@ -110,13 +120,21 @@
 
 			label,
 			button {
-				border: #fff 3px solid;
-				background: #181818;
+				border: 1px solid #b1b1b1;
+				background: #222;
 				border-radius: 6px;
 				color: inherit;
 				font-size: 20px;
 				font-family: inherit;
 				padding: 8px 24px;
+				transition:
+					background 200ms,
+					border 200ms;
+
+				&:hover {
+					background: #ff7b26;
+					color: #fff;
+				}
 			}
 		}
 	}
